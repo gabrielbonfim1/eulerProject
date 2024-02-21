@@ -1,3 +1,4 @@
+from timeit import default_timer as timer
 def genPrimes():
     primes = [2]
     x = 2
@@ -14,3 +15,7 @@ def genPrimes():
             primes.append(prime)
             yield x
             x += 1
+
+def IsPalindrome(num):
+    num_string = str(int(num))
+    return num_string == num_string[::-1]
