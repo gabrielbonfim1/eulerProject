@@ -12,7 +12,7 @@ def genPrimes():
                 x += 1
                 break
         else:
-            primes.append(prime)
+            primes.append(x)
             yield x
             x += 1
 
