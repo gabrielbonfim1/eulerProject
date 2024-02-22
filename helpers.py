@@ -1,4 +1,6 @@
 from timeit import default_timer as timer
+import math
+
 def genPrimes():
     primes = [2]
     x = 2
@@ -33,3 +35,13 @@ def primeSieve(num):
 def IsPalindrome(num):
     num_string = str(int(num))
     return num_string == num_string[::-1]
+
+def countDivisors(n):
+    divs = 0
+    for t in range(1,int(math.sqrt(n))+1):
+        if n % t == 0:
+            if t == n//t:
+                divs+=1
+            else:
+                divs+=2
+    return divs
