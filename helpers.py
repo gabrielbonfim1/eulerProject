@@ -18,21 +18,16 @@ def genPrimes():
 
     
 def primeSieve(num):
-    prime = [True for i in range(num)]
-    p = 2
-    while (p * p <= num): 
-        # If prime[p] is not
-        # changed, then it is a prime
-        if (prime[p] == True): 
-            # Updating all multiples of p
-            for i in range(p * p, num, p):
-                prime[i] = False
-        p += 1
- 
-    # Print all prime numbers
-    for p in range(2, num+1):
-        if prime[p]:
-            return [ind for ind,p in enumerate(prime) if p and ind > 1]
+    markers = list([True for i in range(num)])
+    markers[0],markers[1],markers[2] = True,True,True
+    
+    x = 2
+    while x**2 <= num:
+        if markers[x] == True:        
+            for ind in range(x**2,num,x):
+                markers[ind] = False
+        x += 1
+    return(list([ind for ind,_ in enumerate(markers) if _ == True and ind > 1]))
     
 
 def IsPalindrome(num):
