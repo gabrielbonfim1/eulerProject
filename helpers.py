@@ -59,3 +59,11 @@ def countDivisors(n):
             else:
                 divs+=2
     return divs
+
+def sumOfDivisors(n):
+    divs = set()
+    for t in range(1,int(math.sqrt(n))+1):
+        if n % t == 0:
+            divs.add(t)
+            divs.add(n //t)
+    return sum(divs) - n
