@@ -67,3 +67,6 @@ def sumOfDivisors(n):
             divs.add(t)
             divs.add(n //t)
     return sum(divs) - n
+
+def digits(n):
+    return int(math.log10(n)) + 1
