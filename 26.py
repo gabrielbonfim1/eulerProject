@@ -19,7 +19,7 @@ def get_chain_lenght(n):
             dividendo = rem * 10
         else:
             return len(remainders)- remainders.index(rem)
-            break
+            
 
         
         
