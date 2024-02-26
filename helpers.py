@@ -70,3 +70,7 @@ def sumOfDivisors(n):
 
 def digits(n):
     return int(math.log10(n)) + 1
+
+def isPandigital1To9(n):
+    lst = set(list(str(n)))
+    return len(str(n)) == 9 and len(lst) == 9 and "0" not in lst
