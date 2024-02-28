@@ -1,3 +1,4 @@
+from pickle import TRUE
 from timeit import default_timer as timer
 import math
 from functools import wraps
@@ -74,3 +75,15 @@ def digits(n):
 def isPandigital1To9(n):
     lst = set(list(str(n)))
     return len(str(n)) == 9 and len(lst) == 9 and "0" not in lst
+
+def isPandigital1Ton(n):
+    lst = set(list(str(n)))
+    length = len(lst)
+    
+    if len(lst) != len(str(n)):
+        return False
+    
+    for el in lst:
+        if int(el) > len(lst) or el == '0':
+            return False
+    return True
